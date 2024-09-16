@@ -1,0 +1,239 @@
+* {
+margin: 0;
+padding: 0;
+font-family: "PT Sans", sans-serif;
+}
+
+html{
+font-size: 62.5%;
+}
+
+body {
+  background-image: url("https://accelerationeconomy.com/wp-content/uploads/2021/12/No-Code-Apps-Cyber-Security.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
+  
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff
+}
+
+/* button{
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffffff;
+  padding: 0.7rem;
+  margin-top: 2rem;
+  background-color: ;
+  border-color: #1c26ec;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  outline: none;
+  transition: all .4s ease-out;
+  text-transform: uppercase;
+} */
+
+/* button:hover:first-child{
+  background-color: #2a64f7;
+  color: #fff;
+} */
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  display: inline-flex;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+  background: linear-gradient(90deg, rgb(19, 127, 3) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+.button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, 
+.button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.button:hover::before, 
+.button:focus::before {
+  opacity: 1;
+}
+
+.button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.button:hover::after, 
+.button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+hr{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 60%;
+}
+
+p{
+  color: #000000;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+a{
+  color: #003a90;
+  font-size: 1.5rem;
+  font-weight: 60rem;
+  text-decoration: none;
+  transition: all .3s ease-out;
+}
+a:hover{
+  color: #b6b1b1;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.card {
+  background-color: #1a5b03;
+  padding: 3rem;
+  border-radius: 4%;
+  box-shadow: 0.3rem 0.3rem 0.1rem 0rem #00000060;
+  width: 40rem;
+}
+
+.label-float{
+  font-size: 2rem;
+  position: relative;
+  padding-top: 2rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.label-float input{
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  display: inline-block;
+  border: 0;
+  border-bottom: 0.2rem solid #0d009c;
+  background-color: transparent;
+  outline: none;
+  min-width: 18rem;
+  transition: all .3s ease-out;
+  border-radius: 0;
+  font-size: 1.5rem;
+}
+
+
+.label-float label {
+  font-size: 2rem;
+  position: static;
+  margin-top: 1.2rem; 
+  top: 1.1rem;
+  left: 0;
+  pointer-events: none;
+  color: #0d009c;
+  transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label {
+  font-size: 1.3rem;
+  top: 0;
+  color: #4038a0;
+}
+
+
+
+.label-float input:focus + label,
+.label-float input:valid + label{
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: #4038a0
+}
+
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+
+
+.fa-eye{
+position: absolute;
+top: 1.5rem;
+right: 1rem;
+cursor: pointer;
+color: #0d009c;
+}
+
+#msgError{
+text-align: center;
+color: #ff0000;
+background-color: #ffbbbb;
+padding: 1rem;
+border-radius: 0.4rem;
+display: none;
+}
