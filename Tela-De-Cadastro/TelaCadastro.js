@@ -15,14 +15,6 @@
 let btn = document.querySelector('#verSenha');
 let btnConfirm = document.querySelector('#verConfirmSenha');
 
-let CNPJ = document.querySelector('#CNPJ');
-let labelCNPJ = document.querySelector('#labelCNPJ');
-let validCNPJ = false;
-
-let nomeEmpresa = document.querySelector('#nomeEmpresa');
-let labelNomeEmpresa = document.querySelector('#labelNomeEmpresa');
-let validNomeEmpresa = false;
-
 let usuario = document.querySelector('#usuario');
 let labelUsuario = document.querySelector('#labelUsuario');
 let validUsuario = false;
@@ -39,19 +31,6 @@ let msgError = document.querySelector('#msgError');
 let msgSuccess = document.querySelector('#msgSuccess');
 
 //-----------------------------------------------------------
-CNPJ.addEventListener('keyup', () => {
-    if (CNPJ.value.length <= 2) {
-        labelCNPJ.setAttribute('style', 'color: red');
-        labelCNPJ.innerHTML = '<strong> CNPJ *Insira no mínimo 14 caracteres</strong>';
-        CNPJ.setAttribute('style', 'border-color: red');
-        validCNPJ = false;
-    } else {
-        labelCNPJ.setAttribute('style', 'color: green');
-        labelCNPJ.innerHTML = 'CNPJ';
-        CNPJ.setAttribute('style', 'border-color: green');
-        validCNPJ = true;
-    }
-});
 
 usuario.addEventListener('keyup', () => {
     if (usuario.value.length <= 4) {
@@ -98,14 +77,13 @@ confirmSenha.addEventListener('keyup', () => {
 });
 
 function cadastrar() {
-    if (validCNPJ && validSenha && validUsuario && validConfirmSenha) {
+    if (validSenha && validUsuario && validConfirmSenha) {
         let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
         listaUser.push({
             userCad: usuario.value,
-            CNPJCad: CNPJ.value,
-            nomeEmpresaCad: nomeEmpresa.value,
-            senhaCad: senha.value
+            senhaCad: senha.value,
+            
         });
 
         localStorage.setItem("listaUser", JSON.stringify(listaUser));
@@ -115,7 +93,7 @@ function cadastrar() {
         msgError.setAttribute('style', 'display: none');
         
         setTimeout(() => {
-            window.location.href = "../Tela-Gerador/TelaGerador.html"; // Atualizado para redirecionar para TelaGerador.html
+            window.location.href = "../Tela-Gerador/TelaGerador.html"; 
         }, 1000);
 
     } else {
@@ -125,10 +103,12 @@ function cadastrar() {
     }
 }
 
-btn.addEventListener('click', () => { // Função que ao clicar faz algo
+btn.addEventListener('click', () => { 
     let inputSenha = document.querySelector('#senha');
     if (inputSenha.getAttribute('type') == 'password') {
         inputSenha.setAttribute('type', 'text');
+        btn.classList.add('fa-eye'); 
+        btn.classList.remove('fa-eye-slash'); 
     } else {
         inputSenha.setAttribute('type', 'password');
     }
@@ -138,6 +118,8 @@ btnConfirm.addEventListener('click', () => {
     let inputConfirmSenha = document.querySelector('#confirmSenha');
     if (inputConfirmSenha.getAttribute('type') == 'password') {
         inputConfirmSenha.setAttribute('type', 'text');
+        btnConfirm.classList.add('fa-eye'); 
+        btnConfirm.classList.remove('fa-eye-slash'); 
     } else {
         inputConfirmSenha.setAttribute('type', 'password');
     }

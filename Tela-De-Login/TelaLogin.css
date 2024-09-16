@@ -9,7 +9,7 @@ font-size: 62.5%;
 }
 
 body {
-  background-image: url("https://accelerationeconomy.com/wp-content/uploads/2021/12/No-Code-Apps-Cyber-Security.jpg");
+  background-image: url("https://oulucompanies.fi/wp-content/uploads/2019/06/slider_bg_1920px-1-1440x630.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
@@ -17,99 +17,121 @@ body {
 }
 
 h1{
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #ffffff
+  color: #427D9C
 }
 
-/* button{
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #ffffff;
-  padding: 0.7rem;
-  margin-top: 2rem;
-  background-color: ;
-  border-color: #1c26ec;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  outline: none;
-  transition: all .4s ease-out;
-  text-transform: uppercase;
-} */
-
-/* button:hover:first-child{
-  background-color: #2a64f7;
-  color: #fff;
-} */
-
-.button {
-  min-width: 300px;
-  min-height: 60px;
-  display: inline-flex;
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
+.frame {
+  width: 90%;
+  margin: 4rem auto;
   text-align: center;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #313133;
-  background: #4FD1C5;
-  background: linear-gradient(90deg, rgb(19, 127, 3) 0%, rgba(79,209,197,1) 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-  transition: all 0.3s ease-in-out 0s;
+}
+button {
+  margin: 1rem;
+}
+.custom-btn {
+  width: 130px;
+  height: 70px;
+  font-size: 2.5rem;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
   cursor: pointer;
-  outline: none;
+  transition: all 0.3s ease;
   position: relative;
-  padding: 10px;
-  }
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
 
-.button::before {
-content: '';
-  border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
-  border: 6px solid #00FFCB;
-  box-shadow: 0 0 60px rgba(0,255,203,.64);
+
+.btn {
+  background: #66C4DC;
+  background: linear-gradient(0deg, #66c4dc 0%, #0b6db7 100%);
+  width: 200px;
+  height: 7rem;
+  line-height: 7rem;
+  padding: 0;
+  border: none;
+}
+
+.btn span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn:before,
+.btn:after {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  content: "";
+  right: 0;
+  top: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
 }
 
-.button:hover, 
-.button:focus {
-  color: #313133;
-  transform: translateY(-6px);
+.btn:before {
+  height: 0%;
+  width: 2px;
 }
 
-.button:hover::before, 
-.button:focus::before {
-  opacity: 1;
+.btn:after {
+  width: 0%;
+  height: 2px;
 }
 
-.button::after {
-  content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #00FFCB;
+.btn:hover{
+   background: transparent;
+  box-shadow: none;
+}
+
+.btn:hover:before {
+  height: 100%;
+}
+
+.btn:hover:after {
+  width: 100%;
+}
+
+.btn span:hover{
+   color: rgba(2,126,251,1);
+}
+
+.btn span:before,
+.btn span:after {
   position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
 }
 
-.button:hover::after, 
-.button:focus::after {
-  animation: none;
-  display: none;
+.btn span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn span:hover:before {
+  height: 100%;
+}
+
+.btn span:hover:after {
+  width: 100%;
 }
 
 @keyframes ring {
@@ -157,7 +179,7 @@ a:hover{
 }
 
 .card {
-  background-color: #1a5b03;
+  background-color: #ffffff;
   padding: 3rem;
   border-radius: 4%;
   box-shadow: 0.3rem 0.3rem 0.1rem 0rem #00000060;
@@ -194,7 +216,7 @@ a:hover{
   top: 1.1rem;
   left: 0;
   pointer-events: none;
-  color: #0d009c;
+  color: #427D9C;
   transition: all .3s ease-out;
 }
 
@@ -226,7 +248,7 @@ position: absolute;
 top: 1.5rem;
 right: 1rem;
 cursor: pointer;
-color: #0d009c;
+color: #9c0000;
 }
 
 #msgError{
