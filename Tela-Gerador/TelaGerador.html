@@ -9,59 +9,93 @@
 </head>
 <body>
 
-<div class="container">
-
-  <h2>Gerador de Senha</h2>
-
-  <div class="wrapper">
-
-    <div class="input-box">
-      
-      <input type="text" disabled>
-      <span class="material-symbols-rounded">copy_all</span>
-
-    </div>
-    <div class="pass-indicator"></div>
-    <div class="pass-length">
-      <div class="details">
-        <label class="title">Comprimento da Senha</label>
-        <span></span>
+<section>
+  <div class="container">
+  
+    <h2>Gerador de Senha</h2>
+  
+    <div class="wrapper">
+  
+      <!-- BOTAO DE COPIAR -->
+      <div class="input-box">
+  
+        <input type="text" disabled>
+        <span class="material-symbols-rounded">copy_all</span>
+  
       </div>
-      <input type="range" min="1" max="30" value="15" step="1">
-    </div>
-    <div class="pass-settings">
-      <label class="title">Configuração da Senha</label>
-      <ul class="options">
-        <li class="option">
-          <input type="checkbox" id="lowercase" checked>
-          <label for="lowercase">Minúsculas (a-z)</label>
-        </li>
-        <li class="option">
-          <input type="checkbox" id="uppercase">
-          <label for="uppercase">Maiuscúlas (A-Z)</label>
-        </li>
-        <li class="option">
-          <input type="checkbox" id="numbers">
-          <label for="numbers">Números (0-9)</label>
-        </li>
-        <li class="option">
-          <input type="checkbox" id="symbols">
-          <label for="symbols">Símbolos (!-$^+)</label>
-        </li>
-        <li class="option">
-          <input type="checkbox" id="exc-duplicate">
-          <label for="exc-duplicate">Tirar duplicação</label>
-        </li>
-        <li class="option">
-          <input type="checkbox" id="spaces">
-          <label for="spaces">Colocar Espaços</label>
-        </li>
-      </ul>
-    </div>
-    <button class="generate-btn">Gerar Senha</button>
 
+      <!-- INDICADOR -->
+      <div class="pass-indicator"></div>
+
+      <!-- COMPRIMENTO DA SENHA -->
+      <div class="pass-length">
+
+        <div class="details">
+
+          <label class="title">Comprimento da Senha</label>
+          <!-- APARECER TEXTO -->
+          <span></span>
+          
+        </div>
+        <!-- DEFINIR A QUANTIDADE DE CARACTERES DA SENHA E SUA "FORÇA" -->
+        <input type="range" min="1" max="30" value="15" step="1">
+      </div>
+
+      <!-- CONFIGURAÇÃO DA SENHA -->
+      <div class="pass-settings">
+        
+        <label class="title">Configuração da Senha</label>
+
+        <!-- COMEÇO DA LISTA -->
+        <ul class="options">
+          <li class="option">
+
+            <input type="checkbox" id="lowercase" checked>
+            <label for="lowercase">Minúsculas (a-z)</label>
+
+          </li>
+          <li class="option">
+            <input type="checkbox" id="uppercase">
+            <label for="uppercase">Maiuscúlas (A-Z)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="numbers">
+            <label for="numbers">Números (0-9)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="symbols">
+            <label for="symbols">Símbolos (!-$^+)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="exc-duplicate">
+            <label for="exc-duplicate">Tirar duplicação</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="spaces">
+            <label for="spaces">Colocar Espaços</label>
+          </li>
+        </ul>
+        <!-- FIM DA LISTA -->
+      </div>
+
+      <div class="btn">
+        <!-- BOTAO GERAR SENHA -->
+        <div>
+
+          <button class="generate-btn">Gerar Senha</button>
+
+        </div>
+        <!-- BOTAO GUARDAR SENHA -->
+         <div>
+          
+          <button class="save-btn"> Guardar Senha</button>
+          
+        </div> 
+      </div>
+  
+    </div>
   </div>
-</div>
+</section>
 <!-- partial -->
   <script  src="./TelaGerador.js"></script>
 
