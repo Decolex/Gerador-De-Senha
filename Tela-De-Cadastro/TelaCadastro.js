@@ -126,7 +126,7 @@ btn.addEventListener('click', () => {
 btnConfirm.addEventListener('click', () => { 
 
     // TIRA A COR CINZA E FICA AZUL E TIRA O TRAÇO
-    
+
     let inputConfirmSenha = document.querySelector('#confirmSenha');
     if (inputConfirmSenha.getAttribute('type') == 'password') {
         inputConfirmSenha.setAttribute('type', 'text');
@@ -137,7 +137,7 @@ btnConfirm.addEventListener('click', () => {
         // VOLTA AO PADRÃO "COR CINZA COM TRAÇO"
 
         inputConfirmSenha.setAttribute('type', 'password');
-        btn.classList.add('fa-eye-slash'); 
-        btn.classList.remove('fa-eye');
+        btnConfirm.classList.add('fa-eye-slash'); 
+        btnConfirm.classList.remove('fa-eye');
     }
 });
