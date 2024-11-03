@@ -105,23 +105,39 @@ function cadastrar() {
 }
 
 btn.addEventListener('click', () => { 
+
+    // TIRA A COR CINZA E FICA AZUL E TIRA O TRAÇO
+
     let inputSenha = document.querySelector('#senha');
     if (inputSenha.getAttribute('type') == 'password') {
         inputSenha.setAttribute('type', 'text');
         btn.classList.add('fa-eye'); 
         btn.classList.remove('fa-eye-slash'); 
     } else {
+
+    // VOLTA AO PADRÃO "COR CINZA COM TRAÇO"
+
         inputSenha.setAttribute('type', 'password');
+        btn.classList.add('fa-eye-slash'); 
+        btn.classList.remove('fa-eye');
     }
 });
 
 btnConfirm.addEventListener('click', () => { 
+
+    // TIRA A COR CINZA E FICA AZUL E TIRA O TRAÇO
+    
     let inputConfirmSenha = document.querySelector('#confirmSenha');
     if (inputConfirmSenha.getAttribute('type') == 'password') {
         inputConfirmSenha.setAttribute('type', 'text');
         btnConfirm.classList.add('fa-eye'); 
         btnConfirm.classList.remove('fa-eye-slash'); 
-    } else {
+    } else { 
+
+        // VOLTA AO PADRÃO "COR CINZA COM TRAÇO"
+
         inputConfirmSenha.setAttribute('type', 'password');
+        btn.classList.add('fa-eye-slash'); 
+        btn.classList.remove('fa-eye');
     }
 });
