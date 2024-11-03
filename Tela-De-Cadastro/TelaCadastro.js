@@ -49,17 +49,18 @@ usuario.addEventListener('keyup', () => {
 senha.addEventListener('keyup', () => {
     const regex = /[!@#$%^&*(),.?":{}|<>]/;
     let valid = true;
-    if (senha.value.length < 6 || !regex.test(senha.value)) {
-        labelSenha.setAttribute('style', 'color: red');
-        labelSenha.innerHTML = '<strong> Senha *Insira no mínimo 6 caracteres e um caracter especial </strong>';
-        senha.setAttribute('style', 'border-color: red'); 
-        validSenha = false;
-    } else {
+    if (senha.value.length >= 6 && regex.test(senha.value)) {
         labelSenha.setAttribute('style', 'color: green');
         labelSenha.innerHTML = 'Senha';
         senha.setAttribute('style', 'border-color: green');
         validSenha = true;
-    }
+}   else {
+        labelSenha.setAttribute('style', 'color: red');
+        labelSenha.innerHTML = '<strong> Senha *Insira no mínimo 6 caracteres e um caracter especial </strong>';
+        senha.setAttribute('style', 'border-color: red');
+        validSenha = false;
+}
+
 });
 
 confirmSenha.addEventListener('keyup', () => {
