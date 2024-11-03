@@ -114,25 +114,29 @@ saveBtn.addEventListener("click", () => {
     `;
     passwordTable.appendChild(newRow);
     
-    // Evento para alternar a visibilidade da senha
-    const toggleBtn = newRow.querySelector(".toggle-btn");
-    toggleBtn.addEventListener("click", () => {
-      const senhaOculta = newRow.querySelector(".senha-oculta");
-      const senhaVisivel = newRow.querySelector(".senha-visivel");
-      if (senhaOculta.style.display === "none") {
-        senhaOculta.style.display = "block";
-        senhaVisivel.style.display = "none";
-        toggleBtn.innerHTML = '<i class="fa fa-eye-slash"></i> Mostrar';
-      } else {
-        senhaOculta.style.display = "none";
-        senhaVisivel.style.display = "block";
-        toggleBtn.innerHTML = '<i class="fa fa-eye"></i> Ocultar';
-      }
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const row = button.closest('tr');
+        const senhaOculta = row.querySelector('.senha-oculta');
+        const senhaVisivel = row.querySelector('.senha-visivel');
+        const icon = button.querySelector('i');
+    
+        if (senhaOculta.style.display === 'none') {
+          senhaOculta.style.display = 'block'; // Exibe a senha oculta
+          senhaVisivel.style.display = 'none'; // Oculta a senha visível
+          icon.classList.replace('fa-eye', 'fa-eye-slash'); // Troca o ícone
+          button.textContent = ' Mostrar'; // Atualiza o texto do botão
+        } else {
+          senhaOculta.style.display = 'none'; // Oculta a senha
+          senhaVisivel.style.display = 'block'; // Exibe a senha visível
+          icon.classList.replace('fa-eye-slash', 'fa-eye'); // Troca o ícone
+          button.textContent = ' Ocultar'; // Atualiza o texto do botão
+        }
+      });
     });
-  } else {
-    alert("Por favor, gere uma senha antes de salvar.");
-  }
-});
+    
+  
+}});
 
 
 copyIcon.addEventListener("click", copyPassword);
