@@ -278,6 +278,68 @@ table th, table td {
 }
 
 
+.table-float {
+  font-size: 2rem; 
+  position: sticky;
+  padding-top: 2.5rem; 
+  margin-top: 5%; 
+  margin-bottom: 5%;
+  }
+  
+  .table-float input {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 1rem; 
+  display: inline-block;
+  border: 0;
+  border-bottom: 0.2rem solid #0d009c; 
+  background-color: transparent;
+  outline: none;
+  min-width: 18rem; 
+  font-size: 1.2rem; 
+  transition: all 0.3s ease-out;
+  border-radius: 0;
+  }
+  
+  .table-float input:focus {
+  border-bottom: 0.2rem solid #4038a0; 
+  }
+  
+  .table-float label {
+  color: #0d009c;
+  font-size: 1.8rem; 
+  pointer-events: none;
+  position: absolute;
+  top: 1rem; 
+  left: 1rem; 
+  margin-top: 0;
+  transition: all 0.3s ease-out;
+  }
+  
+  .table-float input:focus + label,
+  .table-float input:valid + label {
+  font-size: 1.3rem; 
+  color: #4038a0;
+  }
+  
+  .fa-eye {
+  position: absolute;
+  top: 50%;
+  right: 1rem; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4285f4;
+  }
+  
+  .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 1rem; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+  }
+
+  
 @media (max-width: 76.8rem) {
   .container {
     width: 90%;
