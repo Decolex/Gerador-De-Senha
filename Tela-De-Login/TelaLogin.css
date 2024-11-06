@@ -9,7 +9,7 @@ font-size: 62.5%;
 }
 
 body {
-  background-image: url("https://oulucompanies.fi/wp-content/uploads/2019/06/slider_bg_1920px-1-1440x630.jpg");
+  background-image: url("./image/backgroundTelaLogin.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed

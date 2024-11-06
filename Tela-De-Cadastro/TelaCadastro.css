@@ -9,7 +9,7 @@ font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
-background-image: url("https://stengg.imgix.net/getmedia/c0a38881-c781-434a-9bc8-6d6661c4674d/cyber-security-masthead1");
+background-image: url("./image/backgroundTelaCadastro.svg");
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
