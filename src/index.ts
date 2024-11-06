@@ -31,7 +31,7 @@ app.get("/", (req: Request, res: Response) => {
 //--------------Rota Login-------------
 app.get('/aep', async function (req: Request, res: Response) {
     const [rows] = await connection.query("SELECT * FROM aep");
-    return res.render('aep/login', {
+    return res.render('aep/TelaLogin', {
         aep: rows
     });
 });
@@ -43,17 +43,17 @@ app.post('/login', async function (req: Request, res: Response)  {
     const [rows]: any = await connection.query(query, [usuario, senha]);
     if (rows.length > 0) {
         // Login bem-sucedido
-        res.redirect('/aep/gerador'); 
+        res.redirect('/aep/TelaGerador'); 
     } else {
     
-        return res.render('aep/login');
+        return res.render('aep/TelaLogin');
      
     }
 })
 
 //--------------Rota cadastro-------------
-app.get('/aep/cadastro', async function (req: Request, res: Response) {
-    return res.render('aep/cadastro/cadastro');
+app.get('/aep/TelaCadastro', async function (req: Request, res: Response) {
+    return res.render('aep/TelaCadastro/TelaCadastro');
 });
 
 app.post('/cadastro/save', async (req: Request, res: Response) => {
@@ -68,8 +68,8 @@ app.post('/cadastro/save', async (req: Request, res: Response) => {
         res.status(500).send('Internal Server Error');
     }
 });
-app.get('/aep/gerador', async function (req: Request, res: Response) {
-    return res.render('aep/gerador/gerador');
+app.get('/aep/TelaGerador', async function (req: Request, res: Response) {
+    return res.render('aep/TelaGerador/TelaGerador');
 });
 
 
