@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
+  }
+  
+  html{
+  font-size: 62.5%;
+  }
+  
+  body {
+    background-image: url("https://oulucompanies.fi/wp-content/uploads/2019/06/slider_bg_1920px-1-1440x630.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+    
+  }
+  
+  h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #427D9C
+  }
+  
+  .frame {
+    width: 90%;
+    margin: 4rem auto;
+    text-align: center;
+  }
+  button {
+    margin: 1rem;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 70px;
+    font-size: 2.5rem;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  
+  .btn {
+    background: #66C4DC;
+    background: linear-gradient(0deg, #66c4dc 0%, #0b6db7 100%);
+    width: 200px;
+    height: 7rem;
+    line-height: 7rem;
+    padding: 0;
+    border: none;
+  }
+  
+  .btn span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn:before,
+  .btn:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  
+  .btn:before {
+    height: 0%;
+    width: 2px;
+  }
+  
+  .btn:after {
+    width: 0%;
+    height: 2px;
+  }
+  
+  .btn:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  
+  .btn:hover:before {
+    height: 100%;
+  }
+  
+  .btn:hover:after {
+    width: 100%;
+  }
+  
+  .btn span:hover{
+     color: rgba(2,126,251,1);
+  }
+  
+  .btn span:before,
+  .btn span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  
+  .btn span:before {
+    width: 2px;
+    height: 0%;
+  }
+  
+  .btn span:after {
+    width: 0%;
+    height: 2px;
+  }
+  
+  .btn span:hover:before {
+    height: 100%;
+  }
+  
+  .btn span:hover:after {
+    width: 100%;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+  
+  hr{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 60%;
+  }
+  
+  p{
+    color: #000000;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  a{
+    color: #003a90;
+    font-size: 1.5rem;
+    font-weight: 60rem;
+    text-decoration: none;
+    transition: all .3s ease-out;
+  }
+  a:hover{
+    color: #b6b1b1;
+  
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 4%;
+    box-shadow: 0.3rem 0.3rem 0.1rem 0rem #00000060;
+    width: 40rem;
+  }
+  
+  .label-float{
+    font-size: 2rem;
+    position: relative;
+    padding-top: 2rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .label-float input{
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    display: inline-block;
+    border: 0;
+    border-bottom: 0.2rem solid #0d009c;
+    background-color: transparent;
+    outline: none;
+    min-width: 18rem;
+    transition: all .3s ease-out;
+    border-radius: 0;
+    font-size: 1.5rem;
+  }
+  
+  
+  .label-float label {
+    font-size: 2rem;
+    position: static;
+    margin-top: 1.2rem; 
+    top: 1.1rem;
+    left: 0;
+    pointer-events: none;
+    color: #427D9C;
+    transition: all .3s ease-out;
+  }
+  
+  .label-float input:focus + label,
+  .label-float input:valid + label {
+    font-size: 1.3rem;
+    top: 0;
+    color: #4038a0;
+  }
+  
+  
+  
+  .label-float input:focus + label,
+  .label-float input:valid + label{
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: #4038a0
+  }
+  
+  
+  .justify-center{
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .fa-eye{
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #9c0000;
+  }
+  
+  #msgError{
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  display: none;
+  }
