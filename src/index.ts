@@ -7,6 +7,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+import path from 'path';
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Configura EJS como a engine de renderização de templates
 app.set('view engine', 'ejs');
