@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 import path from 'path';
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/src/image', express.static(path.join(__dirname, 'src/image')));
 
 
 // Configura EJS como a engine de renderização de templates
