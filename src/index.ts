@@ -31,7 +31,7 @@ app.get("/", (req: Request, res: Response) => {
 //--------------Rota Login-------------
 app.get('/aep', async function (req: Request, res: Response) {
     const [rows] = await connection.query("SELECT * FROM aep");
-    return res.render('aep/TelaLogin', {
+    return res.render('aep/TelaLogin/TelaLogin', {
         aep: rows
     });
 });
