@@ -1,21 +1,14 @@
-import express, {Request, Response} from "express";
-import bodyParser from 'body-parser';
+import express, {Request, Response} from "express"; // usado para criar a aplicação express
 import mysql from "mysql2/promise";
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-import path from 'path';
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/src/image', express.static(path.join(__dirname, 'src/image')));
-
-
 // Configura EJS como a engine de renderização de templates
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');//
 app.set('views', `${__dirname}/views`);
+//app.set('views', './src/views');
+// Middleware para servir arquivos estáticos
+app.use(express.static(__dirname +"/public"));
 
 const connection = mysql.createPool({
     host: "localhost",
@@ -24,57 +17,66 @@ const connection = mysql.createPool({
     password: "mudar123",
     database: "unicesumar"
 });
-app.use(express.static('public'));
-// Middleware para permitir dados no formato JSON
-app.use(express.json());
-// Middleware para permitir dados no formato URLENCODED
-app.use(express.urlencoded({ extended: true }));
+
 // ------ Rota para a URL raiz ----------
 app.get("/", (req: Request, res: Response) => {
-    res.redirect("/aep");
-});
-//--------------Rota Login-------------
-app.get('/aep', async function (req: Request, res: Response) {
-    const [rows] = await connection.query("SELECT * FROM aep");
-    return res.render('aep/TelaLogin/TelaLogin', {
-        aep: rows
-    });
+    res.redirect("/TelaLogin");// ou renderize outra página
 });
 
-app.post('/login', async function (req: Request, res: Response)  {
-    console.log(req.body);
+// Middleware para permitir dados no formato JSON
+app.use(express.json());
+
+
+// Middleware para permitir dados no formato URLENCODED
+app.use(express.urlencoded({ extended: true }));
+
+
+//--------------Rota Login-------------
+app.get('/TelaLogin', async function (req: Request, res:Response) {
+    return res.render('TelaLogin/TelaLogin');
+})
+
+app.post('/TelaLogin', async function (req: Request, res: Response)  {
     const { usuario, senha } = req.body; // Extraia usuário e senha do corpo da requisição !!!!!!!!!!!!!
     const query = "SELECT * FROM users WHERE usuario = ? AND senha = ?";
     const [rows]: any = await connection.query(query, [usuario, senha]);
     if (rows.length > 0) {
         // Login bem-sucedido
-        res.redirect('/aep/TelaGerador'); 
+        res.redirect('/TelaGerador'); 
     } else {
     
-        return res.render('aep/TelaLogin');
+        return res.render('TelaLogin/TelaLogin');
      
     }
 })
 
 //--------------Rota cadastro-------------
-app.get('/aep/TelaCadastro', async function (req: Request, res: Response) {
-    return res.render('aep/TelaCadastro/TelaCadastro');
+app.get('/TelaCadastro', async function (req: Request, res: Response) {
+    return res.render('TelaCadastro/TelaCadastro');
 });
 
 app.post('/cadastro/save', async (req: Request, res: Response) => {
     try { // para ver se esta cessando o banco de dados 
         console.log(req.body); // para ver se esta pegando as info
-        const { usuario, Email, nome, senha, papel} = req.body;
+        const { usuario,senha,confirmSenha} = req.body;
+
+        
+        if (senha !== confirmSenha) {
+            return res.render('TelaCadastro/TelaCadastro', {
+                errorMessage: 'As senhas não coincidem. Tente novamente.'
+            });
+        }
+
         const insertQuery = "INSERT INTO users (usuario, senha) VALUES (?,?)";
         await connection.query(insertQuery, [usuario,senha,]);
-        res.redirect("/aep");
+        res.redirect("/TelaLogin");
     } catch (error) {
         console.error('Error inserting data: ', error);
         res.status(500).send('Internal Server Error');
     }
 });
-app.get('/aep/TelaGerador', async function (req: Request, res: Response) {
-    return res.render('aep/TelaGerador/TelaGerador');
+app.get('/TelaGerador', async function (req: Request, res: Response) {
+    return res.render('TelaGerador/TelaGerador');
 });
 
 
