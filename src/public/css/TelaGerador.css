@@ -35,18 +35,15 @@ body {
   text-align: center;
 }
 
-
 /* ESPAÇAMENTO DENTRO DA BOX */
 .wrapper {
   margin: 2rem 4rem;
 }
 
-
 /* ONDE O ICONE DE COPIAR VAI FICAR */
 .input-box {
   position: relative;
 }
-
 
 /* ONDE VAI FICAR A SENHA */
 .input-box input {
@@ -87,7 +84,6 @@ body {
   margin-top: 1.2rem;
   border-radius: 2.5rem;
 }
-
 
 /* DIVISAO DE COMO VAI FICAR QUANDO MUDAR O INDICAODR DE SENHA */
 .pass-indicator::before {
@@ -289,7 +285,7 @@ table th, table td {
   margin-bottom: 5%;
   }
   
-  .table-float input {
+.table-float input {
   width: 100%;
   padding: 0.5rem 0.5rem 0.5rem 1rem; 
   display: inline-block;
@@ -301,13 +297,13 @@ table th, table td {
   font-size: 1.2rem; 
   transition: all 0.3s ease-out;
   border-radius: 0;
-  }
+}
   
-  .table-float input:focus {
+.table-float input:focus {
   border-bottom: 0.2rem solid #4038a0; 
-  }
-  
-  .table-float label {
+}
+
+.table-float label {
   color: #0d009c;
   font-size: 1.8rem; 
   pointer-events: none;
@@ -316,31 +312,31 @@ table th, table td {
   left: 1rem; 
   margin-top: 0;
   transition: all 0.3s ease-out;
-  }
+}
   
-  .table-float input:focus + label,
-  .table-float input:valid + label {
+.table-float input:focus + label,
+.table-float input:valid + label {
   font-size: 1.3rem; 
   color: #4038a0;
-  }
+}
   
-  .fa-eye {
+.fa-eye {
   position: absolute;
   top: 50%;
   right: 1rem; 
   transform: translateY(-50%);
   cursor: pointer;
   color: #4285f4;
-  }
+}
   
-  .fa-eye-slash {
-    position: absolute;
-    top: 50%;
-    right: 1rem; 
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-  }
+.fa-eye-slash {
+  position: absolute;
+  top: 50%;
+  right: 1rem; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+}
 
 @media (max-width: 76.8rem) {
   .container {
