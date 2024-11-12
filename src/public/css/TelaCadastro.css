@@ -169,7 +169,7 @@ button {
   content: "";
   right: 0;
   top: 0;
-    background: rgba(2,126,251,1);
+  background: rgba(2,126,251,1);
   transition: all 0.3s ease;
 }
 
@@ -197,7 +197,7 @@ button {
 }
 
 .btn span:hover{
-    color: rgba(2,126,251,1);
+  color: rgba(2,126,251,1);
 }
 
 .btn span:before,

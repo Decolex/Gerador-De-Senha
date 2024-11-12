@@ -115,7 +115,7 @@ button {
   content: "";
   right: 0;
   top: 0;
-   background: rgba(2,126,251,1);
+  background: rgba(2,126,251,1);
   transition: all 0.3s ease;
 }
 
@@ -152,7 +152,7 @@ button {
   content: "";
   left: 0;
   bottom: 0;
-   background: rgba(2,126,251,1);
+  background: rgba(2,126,251,1);
   transition: all 0.3s ease;
 }
 
